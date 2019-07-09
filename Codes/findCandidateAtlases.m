@@ -10,7 +10,7 @@ function ret = findCandidateAtlases(indices)
 
 	fprintf('\nReading Images');
 	for i=imageIndices
-		imRaw = imresize(imread(sprintf('../Data/MIAS/images/mdb%03d.pgm',i)),0.5);
+		imRaw = imresize(imread(sprintf('../data/MIAS/images/mdb%03d.pgm',i)),0.5);
 		if(isLeftMammogram(i))
 			imRaw = fliplr(imRaw);
 		end
