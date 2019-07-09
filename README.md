@@ -34,4 +34,4 @@ Accurate breast region segmentation is an important step in various automated al
 
 ## How to use
 * Change directory to `Codes`
-* Run `main.m`
+* Run `main.m` (Developed and tested using MATLAB 2014a)
