@@ -11,7 +11,7 @@ fprintf('\n\nComputing evaluation metrics\n\n');
 for itt=1:322
     fprintf('Image:mdb%03d\n',itt);
     % Read masks
-    groundTruth = imresize(imread(sprintf('../Data/MIAS/ground_truth/mdb%03d.bmp',itt)),0.5);
+    groundTruth = imresize(imread(sprintf('../data/MIAS/ground_truth/mdb%03d.bmp',itt)),0.5);
     dem = imread(sprintf('../Results/MIAS/DemonsMasks/mask%03d.bmp',itt));
     
     % Convert to logical

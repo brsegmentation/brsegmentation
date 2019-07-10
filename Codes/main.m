@@ -3,7 +3,6 @@
 clear all;
 close('all');
 warning off;
-addpath(genpath('../Externals/drtoolbox/'));
 
 %% Download images and ground truths
 DownloadDataset('MIAS_IMAGES');

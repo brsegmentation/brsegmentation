@@ -1,4 +1,5 @@
 %% Data-driven atlas selection
+addpath(genpath('../Externals/drtoolbox/'));
 
 fprintf('\n\nFinding candidate atlas images\n\n');
 
@@ -8,5 +9,7 @@ for fold_idx=1:cv.NumTestSets
     train_mask = cv.training(fold_idx);
     ret(fold_idx)=findCandidateAtlases(train_mask);
 end
+
+rmpath(genpath('../Externals/drtoolbox/'));
 
 save('../Results/MIAS/cvAtlasSelectionResults.mat','ret');

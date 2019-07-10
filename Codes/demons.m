@@ -25,9 +25,6 @@
 
 function [M,val] = demons(S,M,iterations,sigma,alpha,sk)
 
-% Add paths -- http://www.mathworks.com/matlabcentral/fileexchange/21451
-addpath(genpath('../externals/demon_registration_version_8f/'));
-
 % The transformation fields
 Tx=zeros(size(M)); Ty=zeros(size(M));
 
@@ -101,7 +98,5 @@ fprintf('Iterations: %d\nTotal: %f secs\nDisplacement vector: %f secs\nGaussian 
 
 % Performance parameters
 val.time = [itt,t0,t1,t2,t3,t4];
-
-rmpath(genpath('../externals/demon_registration_version_8f/'))
 
 end

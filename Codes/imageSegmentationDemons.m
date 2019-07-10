@@ -1,5 +1,8 @@
 %% Generate Image segmentation using Demons Deformable Registration
 
+% Add paths -- http://www.mathworks.com/matlabcentral/fileexchange/21451
+addpath(genpath('../Externals/demon_registration_version_8f/'));
+
 fprintf('\n\nSegmenting images with Demons Deformable Registration\n\n');
 
 % Initialize performance parameters
@@ -21,6 +24,8 @@ for fold_idx=1:cv.NumTestSets
         corrValues(itt,:) = val.crr;
     end
 end
+
+rmpath(genpath('../Externals/demon_registration_version_8f/'))
 
 % Writing results
 save('../Results/MIAS/correlationValues.mat','corrValues');

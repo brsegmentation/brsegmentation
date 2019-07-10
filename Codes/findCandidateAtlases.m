@@ -10,7 +10,7 @@ function ret = findCandidateAtlases(indices)
 
 	fprintf('\nReading Images');
 	for i=imageIndices
-		imRaw = imresize(imread(sprintf('../Data/MIAS/images/mdb%03d.pgm',i)),0.5);
+		imRaw = imresize(imread(sprintf('../data/MIAS/images/mdb%03d.pgm',i)),0.5);
 		if(isLeftMammogram(i))
 			imRaw = fliplr(imRaw);
 		end
@@ -64,9 +64,6 @@ function ret = findCandidateAtlases(indices)
 	% Plots : Uncomment to look
 	% figure(); plot(2:9, ret.bics);
 	% figure(); scatter(ret.projections(:,1),ret.projections(:,2),5,ret.belongingCluster);
-    
-    rmpath(genpath('../externals/drtoolbox/'));
-
 end
 
 %% Function to find the image closest to cluster centre

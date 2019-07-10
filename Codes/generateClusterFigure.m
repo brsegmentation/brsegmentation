@@ -15,7 +15,7 @@ for fold_idx= fold
         for j=1:numHorz
             positionArray = [0.1 + (j-1)*0.8/numHorz (numVert-i)*1/numVert+0.05 0.8/numHorz 1/numVert-0.01];
             h=subplot(numVert,numHorz,(i-1)*3 + j,'Position', positionArray);
-            im=imresize(imread(sprintf('../Data/MIAS/images/mdb%03d.pgm',imIdx(j))),0.5);
+            im=imresize(imread(sprintf('../data/MIAS/images/mdb%03d.pgm',imIdx(j))),0.5);
             im=flip_and_pad(im,imIdx(j));
             imshow(im);
             if(j==1)
