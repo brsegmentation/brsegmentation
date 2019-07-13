@@ -12,6 +12,10 @@ for fold_idx= 1:kfolds
         imshow(im);
     end
 
-    export_fig(sprintf('../Results/MIAS/Plots/atlasesFold%d.pdf',fold_idx));
-    export_fig(sprintf('../Results/MIAS/Plots/atlasesFold%d.jpg',fold_idx));
+    print(sprintf('../Results/MIAS/Plots/atlasesFold%d.pdf',fold_idx),'-dpdf');
+    print(sprintf('../Results/MIAS/Plots/atlasesFold%d.jpg',fold_idx),'-djpeg');
+    
+%     Install and use export_fig for better rendering
+%     export_fig(sprintf('../Results/MIAS/Plots/atlasesFold%d.pdf',fold_idx));
+%     export_fig(sprintf('../Results/MIAS/Plots/atlasesFold%d.jpg',fold_idx));
 end

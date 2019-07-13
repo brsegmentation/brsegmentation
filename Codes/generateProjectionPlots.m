@@ -22,8 +22,12 @@ for fold = 1:length(ret)
     h_legend = legend(Legend, 'Orientation', ...
                       'vertical', 'location', 'best');
     
-    export_fig(sprintf('../Results/MIAS/Plots/t-SNE%d.pdf',fold));
-    export_fig(sprintf('../Results/MIAS/Plots/t-SNE%d.jpg',fold));
+    print(sprintf('../Results/MIAS/Plots/t-SNE%d.pdf',fold),'-dpdf');
+    print(sprintf('../Results/MIAS/Plots/t-SNE%d.jpg',fold),'-djpeg');
+    
+%     Install and use export_fig for better rendering
+%     export_fig(sprintf('../Results/MIAS/Plots/t-SNE%d.pdf',fold));
+%     export_fig(sprintf('../Results/MIAS/Plots/t-SNE%d.jpg',fold));
     
     
     % BIC vs. k
@@ -43,6 +47,11 @@ for fold = 1:length(ret)
     xlabel('Number of clusters k');
     ylabel('Bayesian Information Criterion');
 
-    export_fig(sprintf('../Results/MIAS/Plots/BIC%d.pdf',fold));
-    export_fig(sprintf('../Results/MIAS/Plots/BIC%d.jpg',fold));
+    
+    print(sprintf('../Results/MIAS/Plots/BIC%d.pdf',fold),'-dpdf');
+    print(sprintf('../Results/MIAS/Plots/BIC%d.jpg',fold),'-djpeg');
+    
+%     Install and use export_fig for better rendering    
+%     export_fig(sprintf('../Results/MIAS/Plots/BIC%d.pdf',fold));
+%     export_fig(sprintf('../Results/MIAS/Plots/BIC%d.jpg',fold));
 end

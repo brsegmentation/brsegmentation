@@ -23,7 +23,12 @@ for fold_idx= fold
                 set(y, 'Units', 'Normalized', 'Position', [-0.1, 0.4, 0]);
             end
         end
-    end    
-    export_fig(sprintf('../Results/MIAS/Plots/cluster%d.pdf',fold_idx));
-    export_fig(sprintf('../Results/MIAS/Plots/cluster%d.jpg',fold_idx));
+    end
+    
+    print(sprintf('../Results/MIAS/Plots/cluster%d.pdf',fold_idx), '-dpdf');
+    print(sprintf('../Results/MIAS/Plots/cluster%d.jpg',fold_idx), '-djpeg');
+
+%     Install and use export_fig for better rendering
+%     export_fig(sprintf('../Results/MIAS/Plots/cluster%d.pdf',fold_idx));
+%     export_fig(sprintf('../Results/MIAS/Plots/cluster%d.jpg',fold_idx));
 end
