@@ -26,7 +26,10 @@ for itt=1:322
     demXY = getEdgeCoordinates(dem);
     
     % Compute Hausdorff distance
-    HD(itt,1)=hausdorffUni(demXY,gtXY);
+    % Multiply by 0.2 for 200 micron pixel edge of MIAS images
+    % Multiple by 2 for compensation factor of downsampling
+    % Final Hausdorff distance reported in mm
+    HD(itt,1)=hausdorffUni(demXY,gtXY)*0.2*2;
 end
 
 % Writing results
